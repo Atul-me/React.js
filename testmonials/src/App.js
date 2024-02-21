@@ -1,10 +1,11 @@
+
 import './App.css';
-import Calculator from './calculator';
+import Testimonial from './Testimonial';
 
 function App() {
   return (
     <>
-    <Calculator />
+    <Testimonial />
     </>
   );
 }
