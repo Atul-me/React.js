@@ -1,14 +1,11 @@
-import React from 'react'
-import './Products.css'
+import "./Product.css";
 
-function Products() {
+const Products = ({ result }) => {
   return (
-    <section className="card-container">
-      <section className="card">
-        <img src='' alt='' />
-      </section>
-    </section>
-  )
-}
+    <>
+      <section className="card-container">{result}</section>
+    </>
+  );
+};
 
-export default Products
+export default Products;
