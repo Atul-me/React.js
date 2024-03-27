@@ -2,13 +2,20 @@
   "name": "react",
   "version": "1.0.0",
   "description": "This the basic of react application",
-  "main": "App.js",
   "scripts": {
     "test": "jest"
   },
   "author": "Atul Kumar",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.12.0"
-  }
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserlist": [
+    "last 2 version"
+  ]
 }

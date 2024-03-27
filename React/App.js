@@ -1,4 +1,5 @@
-
+import React from "react";
+import ReactDOM from "react-dom";
 // This is the defaut react code where we render every element through the create element object.
 // This was very hectic(for every element we have to render an object) that's why the introduction of JSX was made.
 const parent = React.createElement(
