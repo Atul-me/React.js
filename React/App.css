@@ -1,3 +1,25 @@
-#heading{
-    text-decoration: underline;
+.header{
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
 }
+
+.logo{
+    width: 100px;
+}
+
+.nav-links{
+    padding: 0px 20px;
+}
+
+.nav-links>.ul{
+    display: flex;
+    font-size: large;
+    list-style-type: none;
+}
+
+.nav-links>ul>li{
+    margin: 10px;
+    padding: 10px;
+}
+

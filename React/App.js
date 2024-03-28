@@ -48,18 +48,18 @@ import ReactDOM from "react-dom";
 // };
 
 //Composition of components-- *component k ander components*
-const Title = () => <h1 className="heading">Hello</h1>;
+// const Title = () => <h1 className="heading">Hello</h1>;
 
-const HeadingComponent2 = () => {
-  return (
-    <div id="container">
-      {Title()}
-      <Title></Title>
-      <Title />
-      <h1 className="heading">Hello React</h1>
-    </div>
-  );
-};
+// const HeadingComponent2 = () => {
+//   return (
+//     <div id="container">
+//       {Title()}
+//       <Title></Title>
+//       <Title />
+//       <h1 className="heading">Hello React</h1>
+//     </div>
+//   );
+// };
 
 //if we want to use {} then we have to write  return() always or else easily write **function = () => ();**
 // const HeadingComponent = () => (
