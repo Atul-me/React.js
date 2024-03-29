@@ -22,10 +22,23 @@ const Header = () => {
   );
 };
 
+
+const Rescard = () => {
+    return (
+        <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
+            
+            <h3>Megahna Foodz</h3>
+        </div>
+    )
+}
+
 const Body = () => {
     return (
         <div className="body">
-            
+            <div className="search">
+                search
+            </div>
+            <Rescard/>
         </div>
     )
 }
