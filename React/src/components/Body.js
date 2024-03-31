@@ -3,7 +3,7 @@ import { ResData } from "../utils/ResData";
 import Rescard from "./Rescard";
 
 const Body = () => {
-  const [listRes, setListRes] = useState([ResData.data[3]]);
+  const [listRes, setListRes] = useState([ResData]);
   return (
     <div className="body">
       {/* <div className="search">
