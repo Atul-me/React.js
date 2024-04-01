@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ResData } from "../utils/ResData";
+// import { ResData } from "../utils/ResData";
 import Rescard from "./Rescard";
 import Shimmer from "./Shimmer";
 
