@@ -25,22 +25,34 @@
 
 /* Rescard.css */
 
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  margin: 0 20px;
+}
+
 .res-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease;
-  }
+  width: 200px;
+  /* height: 300px; */
+  padding: 5px;
+  /* padding-bottom: 20px; */
+  border: 1px solid transparent;
+}
+
+.res-logo{
+  width: 100%;
+}
+
+.res-card:hover {
+  border: 1px solid black;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
   
-  .res-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .res-img img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
+
   
   .data {
     margin-top: 15px;
@@ -72,6 +84,17 @@
     font-size: 1rem;
     color: #555;
   }
+
+  
+.footer {
+  margin: 5px;
+  padding: 20px 10px;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
   
   
 

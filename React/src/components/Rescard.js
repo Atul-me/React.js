@@ -1,22 +1,37 @@
+import { PIC_URL } from '../utils/constant';
 
-import { PIC_URL } from "../utils/constant";
+const ResCard = (props) => {
+    const { resData } = props;
 
-const Rescard = (props) => {
-    const Res = props.resData;
+    const {
+        cloudinaryImageId,
+        name,
+        cuisines,
+        avgRating,
+        costForTwo,
+        deliveryTime,
+    } = resData?.info;
+
     return (
-        <div className="res-card" style={{backgroundColor: "#f0f0f0"}}>
-            <div className="res-img">
-                <img src={PIC_URL+Res.cloudinaryImageId} />
-            </div>
-            <div className="data">
-                <h3 className="name">{Res.name}</h3>
-                <h4 className="cuisines">{[Res.cuisines.join(",")]}</h4>
-                <h4 className="stars">{Res.avgRating}</h4>
-                <h4 className="cost">${Res.costForTwo/100} For Two</h4>
-                <h4 className="d-time">Max. Delivery Time: {Res.maxDeliveryTime} Mins</h4>
-            </div>
-        </div>
-    )
-}
+        <div
+            className="res-card"
+            style={{
+                backgroundColor: '#f0f0f0',
+            }}
+        >
+            <img
+                className="res-logo"
+                src={PIC_URL + cloudinaryImageId}
+                alt="Biryani"
+            />
 
-export default Rescard;
+            <h3>{name}</h3>
+            <h4>{cuisines.join(', ')}</h4>
+            <h4>{avgRating} stars</h4>
+            <h4>₹ {costForTwo / 100} FOR TWO</h4>
+            <h4>{deliveryTime} minutes</h4>
+        </div>
+    );
+};
+
+export default ResCard;
