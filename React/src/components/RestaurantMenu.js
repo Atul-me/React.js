@@ -1,28 +1,44 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { API_URL } from "../utils/constant";
 
 const RestaurantMenu = () => {
-    const [resMenu, setResMenu] = useState(null);
-    useEffect((() => {
-        fetchData();
-    }), [])
+  const [resMenu, setResMenu] = useState(null);
 
-    const fetchData = async () => {
-        const data = await fetch("");
+  const { resId } = useParams();
 
-        const json = data.json;
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-        setResMenu(json);
-    }
-    return (
-        <div className="container">
-            <h1>Name</h1>
-            <p>time</p>
+  const fetchData = async () => {
+    const data = await fetch(API_URL + resId);
 
-            <div className="recommended">
-                <h2>data - price of menu</h2>
-            </div>
-        </div>
-    )
+    const json = await data.json();
+    setResMenu(json?.data);
+  };
+
+    const {text} = resMenu?.data?.cards[0]?.card?.card?.text;
+
+
+const {itemCards} = resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+?.card?.itemCards[3]?.card.info;
+//   console.log(resMenu)
+
+  return (
+    <div className="container">
+      <h1>{text}</h1>/
+
+      <div className="recommended">
+        {itemCards.map((item) => {
+          <li key={item.info.id}>
+            {item.info.name}-{" "}
+            {item.info.price / 100 || item.info.defaultPrice / 100}
+          </li>
+        })}
+      </div>
+    </div>
+  );
 };
 
-export default RestaurantMenu
+export default RestaurantMenu;
