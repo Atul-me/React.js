@@ -32,7 +32,7 @@ const {itemCards} = resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
       <div className="recommended">
         {itemCards.map((item) => {
           <li key={item.info.id}>
-            {item.info.name}-{" "}
+            {item.info.name}-Rs.
             {item.info.price / 100 || item.info.defaultPrice / 100}
           </li>
         })}
