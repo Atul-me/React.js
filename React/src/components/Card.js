@@ -16,6 +16,13 @@ class Card extends React.Component{
         this.setState(json);
         console.log(json);
     }
+
+    componentDidUpdate(){
+        console.log("update");
+    };
+    componentWillUnmount(){
+        console.log("unmount");
+    }
     render(){
         const {name, bio, avatar_url} = this.state;
         return(

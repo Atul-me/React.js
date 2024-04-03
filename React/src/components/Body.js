@@ -29,6 +29,12 @@ const Body = () => {
     );
   };
 
+  const OnlineStatus = useOnlineStatus();
+
+  if(OnlineStatus === false) {
+    return(<h1>Aw Snap! Check Your Connectivity</h1>)
+  }
+
   
   return listRes.length === 0 ? (
     <Shimmer />
