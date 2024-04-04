@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import ResCard from "./Rescard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from '../utils/useOnlinestatus';
+
 
 const Body = () => {
   const [listRes, setListRes] = useState([]);

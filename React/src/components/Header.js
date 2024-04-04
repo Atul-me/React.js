@@ -9,21 +9,21 @@ const Header = () => {
 
   
     return (
-      <div className="header">
-        <div className="logo-container">
+      <div className="flex justify-between bg-slate-100">
+        <div className="w-24">
           <img
             className="logo"
             src={LOGO_URL}
           />
         </div>
-        <div className="nav-links">
-          <ul className="ul">
-            <li>OnlineStatus: {OnlineStatus ? "🟢" : "🔴"}</li>
+        <div className="">
+          <ul className="flex mt-8 space-x-4 mr-4 text-lg">
+            <li className="">OnlineStatus: {OnlineStatus ? "🟢" : "🔴"}</li>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li>Cart</li>
-            <button onClick={() => {
+            <button className="bg-green-300 px-1 py-1" onClick={() => {
             btn === 'Login' ? setBtn('Logout') : setBtn('Login')
             }}>{btn}</button>
           </ul>
