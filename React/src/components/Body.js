@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // import { ResData } from "../utils/ResData";
-import ResCard from "./Rescard";
+import ResCard, {withPromoted} from "./Rescard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from '../utils/useOnlinestatus';
@@ -37,6 +37,8 @@ const Body = () => {
     return(<h1>Aw Snap! Check Your Connectivity</h1>)
   }
 
+  const ResCardPromoted = withPromoted(ResCard)
+
   
   return listRes.length === 0 ? (
     <Shimmer />
@@ -70,7 +72,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((rest) => (
-          <Link key={rest.info.id}  to={"/restaurant/"+rest.info.id }> <ResCard resData={rest} /></Link>
+          <Link key={rest.info.id}  to={"/restaurant/"+rest.info.id }> {rest.info.isOpen? <ResCardPromoted resData={rest} /> : <ResCard resData={rest} />}</Link>
         ))}
 
       </div>

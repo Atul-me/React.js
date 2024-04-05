@@ -34,4 +34,15 @@ const ResCard = (props) => {
     );
 };
 
+export const withPromoted = (ResCard) => {
+    return (props) => {
+        return (
+            <div className="container">
+                <label>Open 🟢</label>
+                <ResCard {...props}/>
+            </div>
+        )
+    }
+}
+
 export default ResCard;
