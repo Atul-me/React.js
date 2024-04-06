@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 // import { ResData } from "../utils/ResData";
 import ResCard, {withPromoted} from "./Rescard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from '../utils/useOnlinestatus';
+import { UserContext } from "../utils/userContext";
 
 
 const Body = () => {
@@ -37,7 +38,8 @@ const Body = () => {
     return(<h1>Aw Snap! Check Your Connectivity</h1>)
   }
 
-  const ResCardPromoted = withPromoted(ResCard)
+  const ResCardPromoted = withPromoted(ResCard);
+  const {loggedUser} = useContext(UserContext);
 
   
   return listRes.length === 0 ? (
@@ -69,6 +71,10 @@ const Body = () => {
         >
           Top Rated Restraunt
         </button>
+        <div>
+          <h3>Name : </h3>
+          <input  type="text" onChange={{loggedUser}}/>
+        </div>
       </div>
       <div className="res-container">
         {filteredRestaurant.map((rest) => (

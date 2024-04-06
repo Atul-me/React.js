@@ -35,7 +35,7 @@ const approuter = createBrowserRouter([
       },
       {
         path:'/restaurant/:resId',
-        element:<RestaurantMenu />
+        element:<RestaurantMenu  />
       },
     ],
     errorElement:<Error />
