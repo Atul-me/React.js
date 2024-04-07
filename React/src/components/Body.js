@@ -4,7 +4,7 @@ import ResCard, {withPromoted} from "./Rescard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from '../utils/useOnlinestatus';
-import { UserContext } from "../utils/userContext";
+// import  UserContext  from "../utils/userContext";
 
 
 const Body = () => {
