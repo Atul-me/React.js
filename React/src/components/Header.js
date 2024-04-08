@@ -12,7 +12,7 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items) ;
   
     return (
-      <div className="flex justify-between bg-slate-100">
+      <div className="flex justify-between bg-pink-200 sm:bg-yellow-200 lg:bg-green-200 font-[500] shadow-md">
         <div className="w-24">
           <img
             className="logo"
@@ -25,7 +25,15 @@ const Header = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-            <li>Cart: {cartItems.length}</li>
+            <li className="px-4 hover:text-green-500 duration-[.3s]">
+            <Link to="/cart">
+              🛒 (
+              {cartItems.length === 1
+                ? `${cartItems.length} item`
+                : `${cartItems.length} items`}
+              )
+            </Link>
+          </li>
             <button className="bg-green-300 px-1 py-1" onClick={() => {
             btn === 'Login' ? setBtn('Logout') : setBtn('Login')
             }}>{btn}</button>

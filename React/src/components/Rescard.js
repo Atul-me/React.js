@@ -14,10 +14,7 @@ const ResCard = (props) => {
 
     return (
         <div
-            className="res-card"
-            style={{
-                backgroundColor: '#f0f0f0',
-            }}
+            className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg hover:shadow-md hover:bg-gray-200 transition-all"
         >
             <img
                 className="res-logo"
@@ -25,7 +22,7 @@ const ResCard = (props) => {
                 alt="Biryani"
             />
 
-            <h3>{name}</h3>
+            <h3 className="py-4 text-lg font-bold" >{name}</h3>
             <h4>{cuisines.join(', ')}</h4>
             <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>
@@ -37,7 +34,7 @@ const ResCard = (props) => {
 export const withPromoted = (ResCard) => {
     return (props) => {
         return (
-            <div className="container">
+            <div className="absolute p-2 mb-6 ml-4 text-white bg-black rounded-lg">
                 <label>Open 🟢</label>
                 <ResCard {...props}/>
             </div>
