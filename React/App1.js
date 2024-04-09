@@ -4,16 +4,21 @@ import Header from "./src/components/Header";
 import Body from "./src/components/Body";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./src/components/About";
+import { Provider } from 'react-redux';
 import Contact from "./src/components/Contact";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 
 
 
 const Applayout = () => (
-  <div className="main-container">
-    <Header />
-    <Outlet />
-  </div>
+  <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
 );
 
 const approuter = createBrowserRouter([
